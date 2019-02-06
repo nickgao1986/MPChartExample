@@ -21,7 +21,7 @@ import java.util.ArrayList;
 
 import nickgao.com.viewpagerswitchexample.data.DemoBase;
 
-public class AnotherBarActivity11 extends DemoBase {
+public class AnotherBarActivity extends DemoBase {
 
     private BarChart chart;
     private static XAxis xLabels;

@@ -44,7 +44,7 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
                 break;
 
             case 1:
-                intent = new Intent(this,AnotherBarActivity11.class);
+                intent = new Intent(this,AnotherBarActivity.class);
                 startActivity(intent);
                 break;
         }
