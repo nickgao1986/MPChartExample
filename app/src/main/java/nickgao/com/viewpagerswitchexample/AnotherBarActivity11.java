@@ -126,6 +126,13 @@ public class AnotherBarActivity11 extends DemoBase {
                 }
             });
 
+            //右侧Y轴自定义值
+            leftAxis.setValueFormatter(new IAxisValueFormatter() {
+                @Override
+                public String getFormattedValue(float v, AxisBase axisBase) {
+                    return (int)v+"元";
+                }
+            });
 
             BarData data = new BarData(dataSets);
             chart.setData(data);
