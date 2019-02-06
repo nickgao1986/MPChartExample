@@ -1,0 +1,16 @@
+{
+  "data": {
+    "info": {
+      "type": "2",
+      "question_id": "377",
+      "title": "黄金价格会持续上涨吗",
+      "options": ["是", "不是"],
+      "answer": "1",
+      "knowledge_url": "",
+      "explain": "黄金的保值能力很强",
+      "status": "0"
+    }
+  },
+  "status": "success",
+  "message": ""
+}
