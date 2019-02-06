@@ -5,12 +5,14 @@ import android.os.Bundle;
 import android.view.WindowManager;
 
 import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.XAxis.XAxisPosition;
 import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.formatter.IAxisValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
@@ -21,7 +23,8 @@ import nickgao.com.viewpagerswitchexample.data.DemoBase;
 public class AnotherBarActivity11 extends DemoBase {
 
     private BarChart chart;
-
+    private static XAxis xLabels;
+    private static YAxis leftAxis;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,14 +49,14 @@ public class AnotherBarActivity11 extends DemoBase {
         chart.setDrawBarShadow(false);
         chart.setDrawGridBackground(false);
 
-        XAxis xAxis = chart.getXAxis();
-        xAxis.setPosition(XAxisPosition.BOTTOM);
-        xAxis.setDrawGridLines(false);
+        xLabels = chart.getXAxis();
+        xLabels.setPosition(XAxisPosition.BOTTOM);
+        xLabels.setDrawGridLines(false);
 
-        YAxis yAxis = chart.getAxisLeft();
-        yAxis.setDrawGridLines(false);
-        yAxis.setPosition(YAxis.YAxisLabelPosition.OUTSIDE_CHART);       //y轴的数值显示在外侧
-        yAxis.setAxisMinimum(0f); ////为这个轴设置一个自定义的最小值。如果设置,这个值不会自动根据所提供的数据计算
+        leftAxis = chart.getAxisLeft();
+        leftAxis.setDrawGridLines(false);
+        leftAxis.setPosition(YAxis.YAxisLabelPosition.OUTSIDE_CHART);       //y轴的数值显示在外侧
+        leftAxis.setAxisMinimum(0f); ////为这个轴设置一个自定义的最小值。如果设置,这个值不会自动根据所提供的数据计算
         chart.getAxisRight().setEnabled(false);
         chart.getAxisLeft().setDrawGridLines(false);
 
@@ -70,20 +73,33 @@ public class AnotherBarActivity11 extends DemoBase {
 
     private void initData() {
         ArrayList<BarEntry> values = new ArrayList<>();
+        final ArrayList<String> xLabelValue = new ArrayList<>();
+
         for(int i=0;i<7;i++) {
-            float val = 0;
+            xLabelValue.add((i+1)+"月份");
+        }
+
+
+        for(int i=0;i<7;i++) {
+            float[] val = new float[2];
             if(i == 0) {
-                val = 3000;
+                val[1] = 2000;
+                val[0] = 1000;
             }else if(i == 1) {
-                val = 2000;
+                val[1] = 1500;
+                val[0] = 500;
             }else if(i == 2) {
-                val = 5000;
+                val[1] = 3000;
+                val[0] = 2000;
             }else if(i == 3) {
-                val = 1000;
+                val[1] = 700;
+                val[0] = 300;
             }else if(i == 4) {
-                val = 6000;
+                val[1] = 5100;
+                val[0] = 900;
             }else if(i == 5) {
-                val = 1500;
+                val[1] = 1300;
+                val[0] = 200;
             }
             values.add(new BarEntry(i, val));
         }
@@ -102,6 +118,14 @@ public class AnotherBarActivity11 extends DemoBase {
 
             ArrayList<IBarDataSet> dataSets = new ArrayList<>();
             dataSets.add(set1);
+
+            xLabels.setValueFormatter(new IAxisValueFormatter() {
+                @Override
+                public String getFormattedValue(float v, AxisBase axisBase) {
+                    return xLabelValue.get((int) v);
+                }
+            });
+
 
             BarData data = new BarData(dataSets);
             chart.setData(data);
