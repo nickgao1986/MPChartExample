@@ -31,7 +31,8 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
     public ArrayList<String> getList() {
         ArrayList<String> list = new ArrayList<>();
         list.add("chat图片");
-        list.add("chat图片11");
+        list.add("LineChartActivity1");
+        list.add("LineChartActivity2");
         return list;
     }
 
@@ -44,7 +45,12 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
                 break;
 
             case 1:
-                intent = new Intent(this,AnotherBarActivity.class);
+                intent = new Intent(this,LineChartActivity1.class);
+                startActivity(intent);
+                break;
+
+            case 2:
+                intent = new Intent(this,LineChartActivity2.class);
                 startActivity(intent);
                 break;
         }
