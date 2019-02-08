@@ -33,6 +33,9 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
         list.add("chat图片");
         list.add("LineChartActivity1");
         list.add("LineChartActivity2");
+        list.add("LineChartActivity3");
+        list.add("LineChartDemoActivity");
+        list.add("PieChartActivity");
         return list;
     }
 
@@ -43,14 +46,24 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
                 Intent intent = new Intent(this,AnotherBarActivity.class);
                 startActivity(intent);
                 break;
-
             case 1:
                 intent = new Intent(this,LineChartActivity1.class);
                 startActivity(intent);
                 break;
-
             case 2:
                 intent = new Intent(this,LineChartActivity2.class);
+                startActivity(intent);
+                break;
+            case 3:
+                intent = new Intent(this,LineChartActivity3.class);
+                startActivity(intent);
+                break;
+            case 4:
+                intent = new Intent(this,LineChartDemoActivity.class);
+                startActivity(intent);
+                break;
+            case 5:
+                intent = new Intent(this,PieChartActivity.class);
                 startActivity(intent);
                 break;
         }

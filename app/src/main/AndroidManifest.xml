@@ -23,7 +23,10 @@
         <activity android:name=".AnotherBarActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity android:name=".LineChartActivity1" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity android:name=".LineChartActivity2" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".LineChartActivity3" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
 
+        <activity android:name=".LineChartDemoActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".PieChartActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
 
     </application>
 
