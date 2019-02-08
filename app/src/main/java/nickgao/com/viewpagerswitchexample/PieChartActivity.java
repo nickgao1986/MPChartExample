@@ -14,8 +14,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager;
-import android.widget.SeekBar;
-import android.widget.TextView;
 
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
@@ -38,8 +36,7 @@ public class PieChartActivity extends DemoBase implements
         OnChartValueSelectedListener {
 
     private PieChart chart;
-    private SeekBar seekBarX, seekBarY;
-    private TextView tvX, tvY;
+    private static String[] colors1 = {"#ffbb86", "#F37997", "#ff927d", "#AA99ED", "#79D2FF", "#49C9C9","#BBBBBB"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,6 +96,8 @@ public class PieChartActivity extends DemoBase implements
         chart.setEntryLabelColor(Color.WHITE);
         chart.setEntryLabelTypeface(tfRegular);
         chart.setEntryLabelTextSize(12f);
+
+        setData(4,10);
     }
 
     private void setData(int count, float range) {
@@ -107,9 +106,10 @@ public class PieChartActivity extends DemoBase implements
         // NOTE: The order of the entries when being added to the entries array determines their position around the center of
         // the chart.
         for (int i = 0; i < count ; i++) {
+
             entries.add(new PieEntry((float) ((Math.random() * range) + range / 5),
-                    parties[i % parties.length],
-                    getResources().getDrawable(R.drawable.star)));
+                    parties[i],
+                    null));
         }
 
         PieDataSet dataSet = new PieDataSet(entries, "Election Results");
@@ -120,27 +120,14 @@ public class PieChartActivity extends DemoBase implements
         dataSet.setIconsOffset(new MPPointF(0, 40));
         dataSet.setSelectionShift(5f);
 
-        // add a lot of colors
 
         ArrayList<Integer> colors = new ArrayList<>();
 
-        for (int c : ColorTemplate.VORDIPLOM_COLORS)
-            colors.add(c);
 
-        for (int c : ColorTemplate.JOYFUL_COLORS)
-            colors.add(c);
-
-        for (int c : ColorTemplate.COLORFUL_COLORS)
-            colors.add(c);
-
-        for (int c : ColorTemplate.LIBERTY_COLORS)
-            colors.add(c);
-
-        for (int c : ColorTemplate.PASTEL_COLORS)
-            colors.add(c);
-
-        colors.add(ColorTemplate.getHoloBlue());
-
+        colors.add(Color.parseColor(colors1[0]));
+        colors.add(Color.parseColor(colors1[1]));
+        colors.add(Color.parseColor(colors1[2]));
+        colors.add(Color.parseColor(colors1[3]));
         dataSet.setColors(colors);
         //dataSet.setSelectionShift(0f);
 
