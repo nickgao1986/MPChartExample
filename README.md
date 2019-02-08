@@ -2,6 +2,10 @@
 
 
 ###### 运行效果图：
-![enter image description here](https://github.com/nickgao1986/ViewPaperSwitch/blob/master/22.gif)
+![enter image description here](https://github.com/nickgao1986/MPChartExample/blob/master/11.png)
 
-具体的原理请看博客:https://www.imooc.com/article/274387
+![enter image description here](https://github.com/nickgao1986/MPChartExample/blob/master/22.png)
+
+![enter image description here](https://github.com/nickgao1986/MPChartExample/blob/master/33.png)
+
+![enter image description here](https://github.com/nickgao1986/MPChartExample/blob/master/55.png)

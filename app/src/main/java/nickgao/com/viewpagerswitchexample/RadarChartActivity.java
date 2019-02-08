@@ -77,15 +77,6 @@ public class RadarChartActivity extends DemoBase {
                 return mActivities[(int) value % mActivities.length];
             }
         });
-//        xAxis.setValueFormatter(new ValueFormatter() {
-//
-//            private final String[] mActivities = new String[]{"Burger", "Steak", "Salad", "Pasta", "Pizza"};
-//
-//            @Override
-//            public String getFormattedValue(float value) {
-//                return mActivities[(int) value % mActivities.length];
-//            }
-//        });
         xAxis.setTextColor(Color.WHITE);
 
         YAxis yAxis = chart.getYAxis();
