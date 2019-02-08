@@ -36,6 +36,7 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
         list.add("LineChartActivity3");
         list.add("LineChartDemoActivity");
         list.add("PieChartActivity");
+        list.add("RadarChartActivity");
         return list;
     }
 
@@ -64,6 +65,10 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
                 break;
             case 5:
                 intent = new Intent(this,PieChartActivity.class);
+                startActivity(intent);
+                break;
+            case 6:
+                intent = new Intent(this,RadarChartActivity.class);
                 startActivity(intent);
                 break;
         }
